@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor - Tip Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js " crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="card">
+        <div class="card__input">
+            <div class="bill__wrapper">
+                <label for="bill" class="bill__label">Bill</label>
+                <i class="fas fa-dollar-sign"></i>
+                <input type="number" name="bill" class="bill-input">
+            </div>
+            <div class="tip__wrapper">
+                <input type="button" value="5%" type="500" class="tip__button">
+                <input type="button" value="10%" class="tip__button">
+                <input type="button" value="15%" class="tip__button">
+                <input type="button" value="25%" class="tip__button">
+                <input type="button" value="50%" class="tip__button">
+                <input type="text" class="tip__button custom__tip" placeholder="Custom">
+            </div>
+            <div class="bill__wrapper people__wrapper">
+                <label for="people" class="bill__label people__label">Number of people</label>
+                <i class="fas fa-user"></i>
+                <input type="number" name="people" class="people-input">
+            </div>
+        </div>
+        <div class="card__result">
+            <div class="result__top--wrapper">
+                <div class="result__top">
+                    <h5 class="result__title">Tip Amount <br><span>/ person</span></h5>
+                    <div class="result__amount" id="tip-amount">$0.00</div>
+                </div>
+                <div class="result__top">
+                    <h5 class="result__title">Total <br><span>/ person</span></h5>
+                    <div class="result__amount" id="total-amount">$0.00</div>
+                </div>
+            </div>
+            <button id="reset" onclick="resetBill()">RESET</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
