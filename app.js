@@ -35,7 +35,9 @@ function render() {
 billEl.addEventListener('change', () => {
     bill = parseInt(billEl.value)
     console.log(bill)
-    render()
+    if (peopleNumber && tipPercentage) {
+        render()
+    }
 })
 
 peopleEl.addEventListener('change', () => {
@@ -43,8 +45,9 @@ peopleEl.addEventListener('change', () => {
         peopleEl.classList.remove('error-input')
         peopleElLabel.innerHTML = `Number of people`
         peopleNumber = parseInt(peopleEl.value)
-        console.log(peopleNumber)
-        render()
+        if(bill && tipPercentage) {
+            render()
+        }
     } else {
         peopleEl.classList += ' error-input'
         peopleElLabel.innerHTML += `<span class="error">Can't be zero</span>`
@@ -58,15 +61,16 @@ for (let i = 0; i < tipButtonEl.length; ++i) {
                 tipButtonEl.forEach(button => button.classList.remove('tip__chosen'))
                 tipPercentage = parseInt(tipButtonEl[i].value) / 100
                 tipButtonEl[i].classList += ' tip__chosen'
-                console.log(tipPercentage)
-                render()
+                if (bill && peopleNumber) {
+                    render()
+                }
             } else {
                 tipPercentage = parseInt(tipButtonEl[i].value) / 100
-                console.log(tipPercentage)
                 tipButtonEl[i].classList += ' tip__chosen'
-                console.log(tipButtonEl[i])
                 tipChosen = true
-                render()
+                if (bill && peopleNumber) {
+                    render()
+                }
             }
         })
     } else {
@@ -75,16 +79,17 @@ for (let i = 0; i < tipButtonEl.length; ++i) {
                 tipButtonEl.forEach(button => button.classList.remove('tip__chosen'))
                 tipButtonEl[i].classList += ' tip__chosen'
                 tipPercentage = parseInt(tipButtonEl[i].value) / 100
-                console.log(tipPercentage)
-                render()
+                if (bill && peopleNumber) {
+                    render()
+                }
             } else {
                 tipButtonEl[i].classList += ' tip__chosen'
                 tipPercentage = parseInt(tipButtonEl[i].value) / 100
-                console.log(tipPercentage)
                 tipChosen = true
-                render()
+                if (bill && peopleNumber) {
+                    render()
+                }
             }
-            
         })
     }
 }
